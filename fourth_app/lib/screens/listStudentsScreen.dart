@@ -24,7 +24,6 @@ class _MyWidgetState extends State<Liststudentsscreen> {
           IconButton(
             onPressed: () async{
               await Apihelper().GetStudents().then((value) {
-                print(value);
                 setState(() {
                   students = value;
                 });
@@ -36,7 +35,6 @@ class _MyWidgetState extends State<Liststudentsscreen> {
       ),
       body: ListView(
         children: students.map((item) => Text(item["Name"])).toList(),
-
       ),
       
     );

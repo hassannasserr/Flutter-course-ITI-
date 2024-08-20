@@ -19,6 +19,23 @@ class _AddstudentState extends State<Addstudent> {
       FormKey.currentState!.save();
      apihelper.AddStudent(student);
       //Navigator.pushNamead(context, '/list');
+      showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text("Success"),
+        content: Text("The data has been saved successfully."),
+        actions: <Widget>[
+          TextButton(
+            child: Text("OK"),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
    };
 
   }
@@ -177,6 +194,9 @@ class _AddstudentState extends State<Addstudent> {
                 ),
                 
                 ElevatedButton(onPressed: SaveData, child: const Text('Add Student'))
+                //show message if the data is saved
+
+
               ],
           ),
         ),

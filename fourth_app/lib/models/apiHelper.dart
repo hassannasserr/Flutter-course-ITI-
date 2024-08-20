@@ -10,7 +10,6 @@ class Apihelper {
       "content-type": "application/json"
     };
     var response = await get(url, headers: headers);
-    print(response.body);
     var data = jsonDecode(response.body)["Data"];
     
     if (data == null) {
@@ -43,6 +42,5 @@ var response = await post(
   body: jsonEncode(body), // Use jsonEncode from dart:convert
 );
 
-print(response.body);
 }
 }
